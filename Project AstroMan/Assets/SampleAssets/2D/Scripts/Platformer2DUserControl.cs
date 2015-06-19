@@ -8,7 +8,7 @@ namespace UnitySampleAssets._2D
     public class Platformer2DUserControl : MonoBehaviour
     {
         private PlatformerCharacter2D character;
-        private bool jump;
+        public bool jump;
 
         private void Awake()
         {
@@ -17,7 +17,7 @@ namespace UnitySampleAssets._2D
 
         private void Update()
         {           // Read the jump input in Update so button presses aren't missed.
-            if(CrossPlatformInputManager.GetButtonDown("Jump"))
+            if(CrossPlatformInputManager.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
                 jump = true;
         }
 
